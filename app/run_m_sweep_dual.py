@@ -155,39 +155,39 @@ def main():
             tee.write(f"\n## Config {ms_tag}\n")
             tee.flush()
 
-            # ---------------- IVF + Adapter ----------------
-            ivf_csv = results_dir / f"ivf_adapter_{ms_tag}.csv"
-            if not ivf_csv.exists():
-                cmd = (
-                    "python -u nq_cli.py "
-                    f"--dataset {a.dataset} "
-                    f"--work_dir {a.work_dir} "
-                    f"--data_root {a.data_root} "
-                    f"--run_root {run_root} "
-                    f"--bits_sq {a.bits_sq} "
-                    f"--nlist {a.nlist} "
-                    f"--select_nprobe {a.select_nprobe} "
-                    f"--k2_fixed {a.k2_fixed} "
-                    f"--kfinal 10 25 50 100 "
-                    f"--ms_infer {ms_str} "
-                    f"--alphas {a.alphas} "
-                    f"--tau {a.tau} "
-                    f"--beta {a.beta} "
-                    f"--cands {a.cands} "
-                    f"--teacher {a.teacher} "
-                    f"--lr {a.lr} "
-                    f"--epochs {a.epochs} "
-                    f"--subset {a.subset} "
-                    f"--q_batch {a.q_batch} "
-                    f"--slug {a.slug} "
-                    f"--mode ivf_fp32_adapter "
-                    f"--out_csv {ivf_csv}"
-                )
-                run_cmd(cmd, env=env, tee=tee)
-            else:
-                msg = f"[skip] {ivf_csv} exists"
-                print(msg, flush=True)
-                tee.write(msg + "\n")
+            # # ---------------- IVF + Adapter ----------------
+            # ivf_csv = results_dir / f"ivf_adapter_{ms_tag}.csv"
+            # if not ivf_csv.exists():
+            #     cmd = (
+            #         "python -u nq_cli.py "
+            #         f"--dataset {a.dataset} "
+            #         f"--work_dir {a.work_dir} "
+            #         f"--data_root {a.data_root} "
+            #         f"--run_root {run_root} "
+            #         f"--bits_sq {a.bits_sq} "
+            #         f"--nlist {a.nlist} "
+            #         f"--select_nprobe {a.select_nprobe} "
+            #         f"--k2_fixed {a.k2_fixed} "
+            #         f"--kfinal 10 25 50 100 "
+            #         f"--ms_infer {ms_str} "
+            #         f"--alphas {a.alphas} "
+            #         f"--tau {a.tau} "
+            #         f"--beta {a.beta} "
+            #         f"--cands {a.cands} "
+            #         f"--teacher {a.teacher} "
+            #         f"--lr {a.lr} "
+            #         f"--epochs {a.epochs} "
+            #         f"--subset {a.subset} "
+            #         f"--q_batch {a.q_batch} "
+            #         f"--slug {a.slug} "
+            #         f"--mode ivf_fp32_adapter "
+            #         f"--out_csv {ivf_csv}"
+            #     )
+            #     run_cmd(cmd, env=env, tee=tee)
+            # else:
+            #     msg = f"[skip] {ivf_csv} exists"
+            #     print(msg, flush=True)
+            #     tee.write(msg + "\n")
 
             # ---------------- Dual (D2-BAM) + Adapter ----------------
             dual_csv = results_dir / f"dual_adapter_{ms_tag}.csv"
