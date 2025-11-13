@@ -189,42 +189,42 @@ def main():
                 print(msg, flush=True)
                 tee.write(msg + "\n")
 
-            # ---------------- Dual (D2-BAM) + Adapter ----------------
-        #     dual_csv = results_dir / f"dual_adapter_{ms_tag}.csv"
-        #     if not dual_csv.exists():
-        #         cmd = (
-        #             "python -u nq_cli.py "
-        #             f"--dataset {a.dataset} "
-        #             f"--work_dir {a.work_dir} "
-        #             f"--data_root {a.data_root} "
-        #             f"--run_root {run_root} "
-        #             f"--bits_sq {a.bits_sq} "
-        #             f"--nlist {a.nlist} "
-        #             f"--select_nprobe {a.select_nprobe} "
-        #             f"--k2_fixed {a.k2_fixed} "
-        #             f"--kfinal 10 25 50 100 "
-        #             f"--ms_infer {ms_str} "
-        #             f"--alphas {a.alphas} "
-        #             f"--tau {a.tau} "
-        #             f"--beta {a.beta} "
-        #             f"--cands {a.cands} "
-        #             f"--teacher {a.teacher} "
-        #             f"--lr {a.lr} "
-        #             f"--epochs {a.epochs} "
-        #             f"--subset {a.subset} "
-        #             f"--q_batch {a.q_batch} "
-        #             f"--slug {a.slug} "
-        #             f"--mode dbam_dual_adapter "
-        #             f"--out_csv {dual_csv}"
-        #         )
-        #         run_cmd(cmd, env=env, tee=tee)
-        #     else:
-        #         msg = f"[skip] {dual_csv} exists"
-        #         print(msg, flush=True)
-        #         tee.write(msg + "\n")
+            # # ---------------- Dual (D2-BAM) + Adapter ----------------
+            # dual_csv = results_dir / f"dual_adapter_{ms_tag}.csv"
+            # if not dual_csv.exists():
+            #     cmd = (
+            #         "python -u nq_cli.py "
+            #         f"--dataset {a.dataset} "
+            #         f"--work_dir {a.work_dir} "
+            #         f"--data_root {a.data_root} "
+            #         f"--run_root {run_root} "
+            #         f"--bits_sq {a.bits_sq} "
+            #         f"--nlist {a.nlist} "
+            #         f"--select_nprobe {a.select_nprobe} "
+            #         f"--k2_fixed {a.k2_fixed} "
+            #         f"--kfinal 10 25 50 100 "
+            #         f"--ms_infer {ms_str} "
+            #         f"--alphas {a.alphas} "
+            #         f"--tau {a.tau} "
+            #         f"--beta {a.beta} "
+            #         f"--cands {a.cands} "
+            #         f"--teacher {a.teacher} "
+            #         f"--lr {a.lr} "
+            #         f"--epochs {a.epochs} "
+            #         f"--subset {a.subset} "
+            #         f"--q_batch {a.q_batch} "
+            #         f"--slug {a.slug} "
+            #         f"--mode dbam_dual_adapter "
+            #         f"--out_csv {dual_csv}"
+            #     )
+            #     run_cmd(cmd, env=env, tee=tee)
+            # else:
+            #     msg = f"[skip] {dual_csv} exists"
+            #     print(msg, flush=True)
+            #     tee.write(msg + "\n")
 
-        # print("\n✅ m-sweep finished.", flush=True)
-        # tee.write("\n✅ m-sweep finished.\n")
+        print("\n✅ m-sweep finished.", flush=True)
+        tee.write("\n✅ m-sweep finished.\n")
 
 
 if __name__ == "__main__":
